@@ -1,0 +1,60 @@
+.postList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 16px;
+}
+
+.postItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.postItem h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.postItem p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+  overflow: hidden;
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.actionButtons button,
+.actionButtons a {
+  text-decoration: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.actionButtons img {
+  width: 20px;
+  height: 20px;
+}
+
+.actionButtons span {
+  color: rgb(178, 181, 181);
+  margin-left: 3px;
+}

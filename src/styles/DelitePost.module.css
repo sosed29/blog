@@ -1,0 +1,50 @@
+.deliteContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .deliteContent {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    
+  }
+  
+  .deliteContenth3 {
+    color: #333;
+  }
+  
+  .deliteContent p {
+    color: #666;
+  }
+  
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .deliteButton {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  
+  .cancelButton {
+    background-color:rgb(24, 23, 23);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    
+  }
+  

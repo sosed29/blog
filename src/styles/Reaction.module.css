@@ -1,0 +1,25 @@
+.reactionContainer {
+  position: relative;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+
+.reactionButton {
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.reactionOption {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  
+}
+
