@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Comment } from '../InterfacesPost/Interfaces';
+import { Comment } from '../types';
 
 interface CommentPost {
   postId: string;

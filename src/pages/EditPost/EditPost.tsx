@@ -1,9 +1,9 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { Post } from '../InterfacesPost/Interfaces';
-import { loadFromStorage, saveStorage } from '../StorageSave/storage';
-import styles from '../styles/EditPost.module.css';
-import { POSTS_KEY } from '../Keys/StorageKeys';
+import { Post } from '../../types';
+import { loadFromStorage, saveStorage } from '../../utils/storage';
+import styles from '../../styles/EditPost.module.css';
+import { POSTS_KEY } from '../../constants';
 
 const EditPost = () => {
   const { id } = useParams();

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ReactionType } from '../InterfacesPost/Interfaces';
+import { ReactionType } from '../types';
 import styles from '../styles/Reaction.module.css';
 
 interface ReactionProps {
@@ -25,7 +25,7 @@ const Reaction: React.FC<ReactionProps> = ({ onReaction }) => {
       </button>
       
       {isOpen && (
-        <div>
+        <div className={styles.reactionOptions}>
           {Object.values(ReactionType).map((emoji) => (
             <button
               key={emoji}

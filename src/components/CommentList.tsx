@@ -1,9 +1,6 @@
 import React from "react";
-import { Comment, ReactionType } from "../InterfacesPost/Interfaces";
-import Reaction from "./Reaction";
-import { loadFromStorage, saveStorage } from "../StorageSave/storage";
-import { COMMENTS_KEY } from "../Keys/StorageKeys";
-import { CommentReaction } from "../reactionUtils";
+import { Comment } from "../types";
+import styles from '../styles/EditPost.module.css';
 
 interface CommentListProps {
   comments: Comment[];
@@ -14,46 +11,26 @@ const CommentList: React.FC<CommentListProps> = ({
   comments,
   onDeleteComment,
 }) => {
-  const handleReaction = (commentId: string, reaction: ReactionType) => {
-    const allComments = loadFromStorage<Comment[]>(COMMENTS_KEY) || [];
-    const updatedComments = CommentReaction(
-      commentId,
-      reaction,
-      allComments
-    );
-    saveStorage(COMMENTS_KEY, updatedComments);
-    onDeleteComment("");
-  };
-
   const sortedComments = [...comments].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 
   return (
-    <div className="comment-list">
+    <div className={styles.commentList}>
       {sortedComments.map((comment) => (
-        <div key={comment.id} className="comment-item">
-          <div className="comment-header">
+        <div key={comment.id} className={styles.commentItem}>
+          <div className={styles.commentHeader}>
             <strong>{comment.author}</strong>
             <span>{new Date(comment.date).toLocaleString()}</span>
           </div>
-          <p className="comment-text">{comment.text}</p>
-
-          {comment.reaction && (
-            <span className="comment-reaction">
-              Реакция: {comment.reaction}
-            </span>
-          )}
-          <div className="comment-actions">
+          <p className={styles.commentText}>{comment.text}</p>
+          <div className={styles.commentActions}>
             <button
               onClick={() => onDeleteComment(comment.id)}
-              className="delete-button"
+              className={styles.deleteButton}
             >
               Удалить
             </button>
-            <Reaction
-              onReaction={(reaction) => handleReaction(comment.id, reaction)}
-            />
           </div>
         </div>
       ))}

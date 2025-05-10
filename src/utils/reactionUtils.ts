@@ -1,6 +1,6 @@
-import { Comment, ReactionType } from './InterfacesPost/Interfaces';
-import { loadFromStorage } from './StorageSave/storage';
-import { COMMENTS_KEY } from './Keys/StorageKeys';
+import { Comment, ReactionType } from '../types';
+import { loadFromStorage } from './storage';
+import { COMMENTS_KEY } from '../constants';
 
 export const getPostReactions = (postId: string): Record<ReactionType, number> => {
   const allComments = loadFromStorage<Comment[]>(COMMENTS_KEY) || [];

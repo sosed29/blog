@@ -1,4 +1,4 @@
-import { Post } from '../InterfacesPost/Interfaces';
+import { Post } from '../types';
 
 export const PostCards: Post[] = [
   {
@@ -7,6 +7,7 @@ export const PostCards: Post[] = [
     content: 'Это первый пост!',
     createdAt: new Date().toISOString(),
     comments: [],
+    reaction: undefined
   },
   {
     id: '2',
@@ -14,5 +15,6 @@ export const PostCards: Post[] = [
     content: 'Второй пост!',
     createdAt: new Date().toISOString(),
     comments: [],
+    reaction: undefined
   },
 ];
